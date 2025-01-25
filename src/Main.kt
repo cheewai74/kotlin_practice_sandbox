@@ -96,14 +96,30 @@ val Int.isEven: Boolean
     get() = this.mod(2) == 0
 
 
+class CustomThread: Thread(){
+    override fun run() {
+        super.run()
+        println("CustomThread.run")
+    }
+
+    companion object {
+        fun start() {
+            println("CustomThread.start")
+        }
+    }
+}
+
+
 fun main() {
+
+    CustomThread.start()
 
 //    val appLogger = ApplicationLogger(SimpleLogger())
 //    appLogger.log("Example", appLogger)
 
-    val viewModel = ViewModel()
-    viewModel.search("Kotlin")
-    viewModel.search("Code")
+//    val viewModel = ViewModel()
+//    viewModel.search("Kotlin")
+//    viewModel.search("Code")
 
 //    val duration = hourInMills
 
