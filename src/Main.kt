@@ -61,6 +61,11 @@ interface ResourceProvider: StringProvider{
     fun getDimension(id: Int): Long = id.toLong()
 }
 
+const val DEFAULT_CLICK_DELAY = 500
+
+private fun log(error: Throwable) = println(error)
+
+
 //class DefaultResourceProvider: StringProvider{
 //
 //    override fun getString(id: Int): String {
@@ -87,11 +92,36 @@ fun xmas_greetings(greeting: String, vararg items: Any){
     }
 }
 
+val Int.isEven: Boolean
+    get() = this.mod(2) == 0
 
 
 fun main() {
 
-    val controller = SearchController.create("Kotlin")
+//    val appLogger = ApplicationLogger(SimpleLogger())
+//    appLogger.log("Example", appLogger)
+
+    val viewModel = ViewModel()
+    viewModel.search("Kotlin")
+    viewModel.search("Code")
+
+//    val duration = hourInMills
+
+//    millisForHours(5)
+//    4.millisForHours()
+//    10.millisForHours()
+//
+//    "[abc]+".toRegex()
+//
+////    println(8.isEven)
+////    println(7.isEven)
+//    5.log()
+//    "sample string".log()
+//    listOf(1,2,3).log()
+
+//    val controller = SearchController.create("Kotlin")
+//
+
 //    SearchController.MAX_RESULTS
 //    println(NetworkConfig.baseUrl)
 //    println(NetworkConfig.getNetworkDetails())
