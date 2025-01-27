@@ -112,7 +112,10 @@ class CustomThread: Thread(){
 
 fun main() {
 
-    CustomThread.start()
+    println("Hello Database")
+//    Database.connect()
+
+//    CustomThread.start()
 
 //    val appLogger = ApplicationLogger(SimpleLogger())
 //    appLogger.log("Example", appLogger)
